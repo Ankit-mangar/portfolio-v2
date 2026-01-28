@@ -3,9 +3,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import { random } from "maath";
 import { TypedArray } from "three";
+import * as THREE from "three";
 
 const Stars = (props: any) => {
-  const ref = useRef<THREE.Points>();
+  const ref = useRef<THREE.Points>(null);
   const [sphere] = useState<TypedArray>(() =>
     random.inSphere(new Float32Array(5001), { radius: 1.2 })
   );
